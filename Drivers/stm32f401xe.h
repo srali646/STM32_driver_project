@@ -25,7 +25,28 @@
 #define GPIOE_BASE_ADDR     (AHB1_BASE_ADDR + (0x1000))
 #define GPIOH_BASE_ADDR     (AHB1_BASE_ADDR + (0x1C00))
 
-// Need to make register definitions
+// Need to make register definitions. Make a struct for GPIO.
+typedef struct
+{
+    uint32_t MODER;
+    uint32_t OTYPER;
+    uint32_t OSPEEDR; 
+    uint32_t PUPDR;
+    uint32_t IDR;
+    uint32_t ODR;
+    uint32_t BSRR;
+    uint32_t LCKR;
+    uint32_t AFR[2];
+} GPIO_RegDef_t;
+
+// Need the struct to point to the base address for the given GPIO port with a typecast GPIO_Reg_Def. 
+#define GPIOA       ((GPIO_RegDef_t*)GPIOA_BASE_ADDR);
+#define GPIOB       ((GPIO_RegDef_t*)GPIOB_BASE_ADDR);
+#define GPIOC       ((GPIO_RegDef_t*)GPIOC_BASE_ADDR);
+#define GPIOD       ((GPIO_RegDef_t*)GPIOD_BASE_ADDR);
+#define GPIOE       ((GPIO_RegDef_t*)GPIOE_BASE_ADDR);
+#define GPIOH       ((GPIO_RegDef_t*)GPIOH_BASE_ADDR);
+
 
 
 #endif /* STM32F401XE_H */
