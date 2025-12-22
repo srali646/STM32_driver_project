@@ -7,9 +7,11 @@
 #ifndef GPIO_DRIVER_H_
 #define GPIO_DRIVER_H_
 
+#include "stm32f401xe.h"
+
 // Prototype functions
 // Clock EN API. Needed for any peripheral.
-void GPIO_ClockControl(void);
+void GPIO_ClockControl(GPIO_RegDef_t *pGPIOx, uint_t EnoDi);
 
 // GPIO Init and Deinit
 void GPIO_Init(void);

@@ -7,6 +7,9 @@
 #ifndef STM32F401XE_H
 #define STM32F401XE_H
 
+#define ENABLE  1 
+#define DISABLE 0
+
 // Base addresses of AHBx and APBx buses
 #define AHB2_BASE_ADDR      0x50000000U
 #define AHB1_BASE_ADDR      0X40020000U
@@ -81,8 +84,23 @@ typedef struct
 #define GPIOE       ((GPIO_RegDef_t*)GPIOE_BASE_ADDR)
 #define GPIOH       ((GPIO_RegDef_t*)GPIOH_BASE_ADDR)
 
-//Pointer for RCC Base address
-#define RCC         ((RCC_REG_t*)RCC_BASE_ADDR)
+// Pointer for RCC Base address
+#define RCC         ((RCC_RegDef_t*)RCC_BASE_ADDR)
 
+// Define the GPIO Enable clock function
+#define GPIOA_Clk_En()          (RCC -> AHB1ENR |= (1<<0))
+#define GPIOB_Clk_En()          (RCC -> AHB1ENR |= (1<<1))
+#define GPIOC_Clk_En()          (RCC -> AHB1ENR |= (1<<2))          
+#define GPIOD_Clk_En()          (RCC -> AHB1ENR |= (1<<3))          
+#define GPIOE_Clk_En()          (RCC -> AHB1ENR |= (1<<4))          
+#define GPIOH_Clk_En()          (RCC -> AHB1ENR |= (1<<7))          
+
+// Define the GPIO Disable clock function
+#define GPIOA_Clk_Di()          (RCC -> AHB1ENR &= ~(1<<0))
+#define GPIOB_Clk_Di()          (RCC -> AHB1ENR &= ~(1<<1))
+#define GPIOC_Clk_Di()          (RCC -> AHB1ENR &= ~(1<<2))          
+#define GPIOD_Clk_Di()          (RCC -> AHB1ENR &= ~(1<<3))          
+#define GPIOE_Clk_Di()          (RCC -> AHB1ENR &= ~(1<<4))          
+#define GPIOH_Clk_Di()          (RCC -> AHB1ENR &= ~(1<<7))  
 
 #endif /* STM32F401XE_H */
