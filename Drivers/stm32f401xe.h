@@ -13,6 +13,40 @@
 #define APB2_BASE_ADDR      0x40010000U
 #define APB1_BASE_ADDR      0x40000000U
 
+// Base address of RCC
+#define RCC_BASE_ADDR       0x40023800U
+
+//Register Definitions for RCC register
+typedef struct
+{
+    uint32_t CR;
+    uint32_t PLLCFGR;
+    uint32_t CFGR; 
+    uint32_t CIR;
+    uint32_t AHB1RSTR;
+    uint32_t AHB2RSTR;
+    uint32_t RESERVED0[2];
+    uint32_t APB1RSTR;
+    uint32_t APB2RSTR;
+    uint32_t RESERVED1[2];
+    uint32_t AHB1ENR;
+    uint32_t AHB2ENR;
+    uint32_t RESERVED2[2];
+    uint32_t APB1ENR;
+    uint32_t APB2ENR;
+    uint32_t RESERVED3[2];
+    uint32_t AHB1LPENR;
+    uint32_t AHB2LPENR;
+    uint32_t RESERVED4[2];
+    uint32_t APB1LPENR;
+    uint32_t APB2LPENR;
+    uint32_t RESERVED5[2];
+    uint32_t BDCR;
+    uint32_t CSR;
+    uint32_t SSCGR;
+    uint32_t PLLI2SCFGR;          
+} RCC_RegDef_t;
+
 /*
  * Define the base addresses of the GPIO peripherals
  * AHB1 connects to: GPIOA, GPIOB, GPIOC, GPIOD, GPIOE, GPIOH,
