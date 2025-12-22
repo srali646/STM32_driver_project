@@ -74,13 +74,15 @@ typedef struct
 } GPIO_RegDef_t;
 
 // Need the struct to point to the base address for the given GPIO port with a typecast GPIO_Reg_Def. 
-#define GPIOA       ((GPIO_RegDef_t*)GPIOA_BASE_ADDR);
-#define GPIOB       ((GPIO_RegDef_t*)GPIOB_BASE_ADDR);
-#define GPIOC       ((GPIO_RegDef_t*)GPIOC_BASE_ADDR);
-#define GPIOD       ((GPIO_RegDef_t*)GPIOD_BASE_ADDR);
-#define GPIOE       ((GPIO_RegDef_t*)GPIOE_BASE_ADDR);
-#define GPIOH       ((GPIO_RegDef_t*)GPIOH_BASE_ADDR);
+#define GPIOA       ((GPIO_RegDef_t*)GPIOA_BASE_ADDR)
+#define GPIOB       ((GPIO_RegDef_t*)GPIOB_BASE_ADDR)
+#define GPIOC       ((GPIO_RegDef_t*)GPIOC_BASE_ADDR)
+#define GPIOD       ((GPIO_RegDef_t*)GPIOD_BASE_ADDR)
+#define GPIOE       ((GPIO_RegDef_t*)GPIOE_BASE_ADDR)
+#define GPIOH       ((GPIO_RegDef_t*)GPIOH_BASE_ADDR)
 
+//Pointer for RCC Base address
+#define RCC         ((RCC_REG_t*)RCC_BASE_ADDR)
 
 
 #endif /* STM32F401XE_H */
