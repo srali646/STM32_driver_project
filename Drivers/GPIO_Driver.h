@@ -11,7 +11,7 @@
 
 // Prototype functions
 // Clock EN API. Needed for any peripheral.
-void GPIO_ClockControl(GPIO_RegDef_t *pGPIOx, uint_t EnoDi);
+void GPIO_ClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnoDi);
 
 // GPIO Init and Deinit
 void GPIO_Init(void);
